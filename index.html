@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Diario de un exfumador — Patrick</title>
+<meta name="description" content="Me llamo Patrick y fumé 31 años. Hoy llevo 32 días sin un cigarrillo y lo cuento todo, sin filtros. Acompáñame." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<main>
+  <!-- ============================ HERO ============================ -->
+  <header class="hero" data-screen-label="Héroe">
+    <div class="hero-photo full">
+      <img src="images/hero-patrick.png" alt="Patrick, sonriendo, con una banda que dice EX FUMADOR" style="margin: 0px; padding: 0px" />
+    </div>
+
+    <div class="shell hero-body">
+      <h1 class="hero-title" style="color: rgb(232, 117, 91); margin: 0px 54px 11px -100px; padding: 0px 0px 0px 50px">Ha llegado la hora de que tu voz sea más fuerte que la de tu adicción.</h1>
+      <p class="hero-sub">Ha llegado la hora de que tu voz sea más fuerte que la de tu adicción.</p>
+      <p class="hero-lede">Después de 3 décadas fumando, planté cara a mi adicción y ahora llevo <strong>semanas sin un solo cigarrillo</strong>. Lo estoy contando todo, sin filtros. Soy alguien normal que un día decidió dejarlo y comparte el camino de verdad.</p>
+
+      <!-- ===== email capture (the only form on the page) ===== -->
+      <section class="capture" id="capture" aria-label="Apúntate por email">
+        <form class="capture-form" id="signup-form" novalidate>
+          <label class="field-label" for="email">Déjame tu email y te acompaño:</label>
+          <input
+            class="email-input"
+            type="email"
+            id="email"
+            name="email"
+            inputmode="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            aria-describedby="email-error capture-note"
+            required />
+
+          <label class="field-label" for="phase">¿En qué momento estás?</label>
+          <select class="phase-select" id="phase" name="phase" required>
+            <option value="" disabled selected>Elige tu momento…</option>
+            <option value="telegram">Quiero unirme a la comunidad de Telegram</option>
+            <option value="valorando">Estoy valorando dejar de fumar</option>
+            <option value="no-atrevo">Tengo el tratamiento, pero no me atrevo a empezar</option>
+            <option value="en-proceso">Tengo el tratamiento y estoy en el proceso</option>
+            <option value="finalizado">Finalicé el tratamiento, me inquieta qué ocurrirá ahora</option>
+          </select>
+
+          <button class="btn-primary" type="submit">Quiero que me acompañes</button>
+          <p class="error-text" id="email-error">Escribe un email válido para que pueda avisarte.</p>
+        </form>
+        <p class="capture-note" id="capture-note">Tu email solo lo uso para avisarte de mi proceso. No se lo doy a nadie.</p>
+
+        <div class="capture-success" role="status">
+          <div class="success-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+          </div>
+          <h3>Gracias por confiar.</h3>
+          <p>Te escribo pronto. Vamos juntos, un día detrás de otro.</p>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- ==================== EMOTIONAL BAND ==================== -->
+  <section class="band full" data-screen-label="Amor tóxico" aria-label="La nicotina es un amor tóxico">
+    <div class="band-inner">
+      <div class="band-figure">
+        <image-slot id="toxic-love" shape="rounded" radius="18" placeholder="Arrastra aquí Gemini_Generated_Image_145fcm….png"></image-slot>
+      </div>
+      <div class="band-copy">
+        <p class="band-quote">La nicotina es <em style="color: rgb(8, 8, 8)">un amor tóxico.</em></p>
+        <p class="band-text">Te hizo creer que erais felices, pero solo te maltrató, te utilizó, se llevó tu dinero y arruinó tu salud en cada uno de los mejores momentos de tu vida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ¿EN QUÉ MOMENTO ESTÁS? ==================== -->
+  <section class="section shell" data-screen-label="¿En qué momento estás?">
+    <div class="section-head">
+      <h2 class="section-title">¿En qué momento estás?</h2>
+      <p class="section-sub">Cada persona llega a este punto de una forma distinta. Dime dónde estás tú y empezamos por ahí. Sin prisa, sin sermones.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Card 1 -->
+      <article class="card accent-teal">
+        <div class="card-top">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6" /><path d="M10 21h4" /><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.3 1 2.1V16h6v-.4c0-.8.4-1.5 1-2.1A6 6 0 0 0 12 3Z" /></svg>
+          </div>
+          <div class="card-headwrap">
+            <div class="card-badges">
+              <span class="badge badge-solid">Gratis</span>
+              <span class="badge badge-soft">Empieza aquí</span>
+            </div>
+            <h3 class="card-title">¿Te lo estás pensando?</h3>
+          </div>
+        </div>
+        <p class="card-text">Aún no te has decidido y ni siquiera has ido al médico. Empieza por aquí: un recurso gratuito para entender qué te espera y dar el primer paso sin agobios.</p>
+        <button class="card-cta" data-scroll-to-email data-phase="valorando" type="button">
+          Quiero dejar de fumar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </button>
+      </article>
+
+      <!-- Card 2 (NEW) -->
+      <article class="card accent-amber">
+        <div class="card-top">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7Z" /><path d="m7 7 7 7" /></svg>
+          </div>
+          <div class="card-headwrap">
+            <h3 class="card-title">Ya tienes el tratamiento y empiezas</h3>
+          </div>
+        </div>
+        <p class="card-text">Tienes la medicación en casa y arrancas el proceso. Una guía para acompañar tus primeros días y no perderte por el camino.</p>
+        <button class="card-cta" data-scroll-to-email data-phase="no-atrevo" type="button">
+          Ver la guía
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </button>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card accent-blue">
+        <div class="card-top">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.2 2.9 7.8 7 9 4.1-1.2 7-4.8 7-9V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+          </div>
+          <div class="card-headwrap">
+            <h3 class="card-title">Terminaste el tratamiento y temes recaer</h3>
+          </div>
+        </div>
+        <p class="card-text">Acabaste el tratamiento y tienes miedo de volver atrás. Una guía de mantenimiento para que esos días bajos no te pillen desprevenido.</p>
+        <button class="card-cta" data-scroll-to-email data-phase="finalizado" type="button">
+          Ver la guía
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== ACOMPÁÑAME (COMUNIDAD TELEGRAM) ==================== -->
+  <section class="section shell" data-screen-label="Acompáñame en el día a día">
+    <div class="community" style="background-color: rgb(255, 255, 255); opacity: 0.38">
+      <div class="community-figure">
+        <image-slot id="patrick-sitting" shape="rounded" radius="18" placeholder="Arrastra aquí ChatGPT_Image_5_jun_2026__11_48_33.png (vertical, sentado)"></image-slot>
+      </div>
+      <div class="community-copy">
+        <div class="community-brand" style="text-align: center">
+          <span class="tg-badge" aria-label="Telegram" style="text-align: center">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21.9 4.4 18.7 19.5c-.24 1.06-.87 1.32-1.76.82l-4.86-3.58-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.94L17.94 6.5c.4-.35-.09-.55-.62-.2L6.1 13.4l-4.78-1.5c-1.04-.32-1.06-1.04.22-1.54L20.5 2.86c.87-.32 1.63.2 1.4 1.54Z" fill="#fff"/></svg>
+          </span>
+          <span class="community-platform" style="font-size: 10px">DIARIO DE UN EX FUMADOR</span>
+        </div>
+        <h2 class="community-title" style="font-size: 32px; text-align: center">Te acompaño en el día a día</h2>
+        <p class="community-text">Entra en la comunidad de Telegram y caminemos cada día juntos.</p>
+        <button class="btn-telegram" data-scroll-to-email data-phase="telegram" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.4 18.7 19.5c-.24 1.06-.87 1.32-1.76.82l-4.86-3.58-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.94L17.94 6.5c.4-.35-.09-.55-.62-.2L6.1 13.4l-4.78-1.5c-1.04-.32-1.06-1.04.22-1.54L20.5 2.86c.87-.32 1.63.2 1.4 1.54Z"/></svg>
+          Quiero unirme
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST ==================== -->
+  <section class="section shell" data-screen-label="Lo que me decís">
+    <div class="section-head">
+      <h2 class="section-title">Palabras que nunca imaginé recibir</h2>
+      <p class="section-sub" style="color: rgb(164, 78, 50); font-weight: 600">¡Gracias a todas esas personas¡</p>
+    </div>
+
+    <div class="quotes quotes-shots">
+      <figure class="shot">
+        <image-slot id="tk-eli" shape="rounded" radius="14" fit="contain" style="aspect-ratio: 426 / 145;" placeholder="Captura TikTok — Eli (Screenshot_20260604_161138)"></image-slot>
+      </figure>
+
+      <figure class="shot">
+        <image-slot id="tk-ana" shape="rounded" radius="14" fit="contain" style="aspect-ratio: 426 / 132;" placeholder="Captura TikTok — anacordoba325 (Screenshot_20260604_161012)"></image-slot>
+      </figure>
+
+      <figure class="shot">
+        <image-slot id="tk-raquel" shape="rounded" radius="14" fit="contain" style="aspect-ratio: 426 / 117;" placeholder="Captura TikTok — Raquel Bachiller431 (Screenshot_20260604_160933)"></image-slot>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== PRÓXIMO DIRECTO ==================== -->
+  <section class="section shell" data-screen-label="Próximo directo">
+    <div class="live-card">
+      <div class="live-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        EN DIRECTO
+      </div>
+      <div class="live-icon" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-2.9v11.6a2.45 2.45 0 1 1-2.04-2.41V9.2a5.34 5.34 0 1 0 4.94 5.32V8.9a7.16 7.16 0 0 0 4.18 1.34V7.34a4.25 4.25 0 0 1-3.12-1.52Z" fill="#ff004f"/>
+          <path d="M15.6 5.07a4.28 4.28 0 0 1-1.06-2.82h-2.9v11.6a2.45 2.45 0 1 1-2.04-2.41V8.45a5.34 5.34 0 1 0 4.94 5.32V8.15a7.16 7.16 0 0 0 4.18 1.34V6.59a4.25 4.25 0 0 1-3.12-1.52Z" fill="#00f2ea"/>
+          <path d="M16.1 5.45a4.28 4.28 0 0 1-1.06-2.82h-2.9v11.6a2.45 2.45 0 1 1-2.04-2.41V8.82a5.34 5.34 0 1 0 4.94 5.32V8.52a7.16 7.16 0 0 0 4.18 1.34V6.97a4.25 4.25 0 0 1-3.12-1.52Z" fill="#fff"/>
+        </svg>
+      </div>
+      <h3 class="live-title">Próximo directo en TikTok</h3>
+      <p class="live-text">Sígueme en TikTok y no te pierdas el próximo directo, un espacio de fumadores y exfumadores donde nos apoyamos unos a otros y donde también respondo preguntas e informo de las etapas de exfumador. ¡No te lo pierdas!</p>
+      <a class="live-cta" href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
+        Seguir en TikTok
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== CLOSING ==================== -->
+  <section class="disclaimer shell">
+    <p>Esto es acompañamiento desde mi experiencia personal, no consejo médico ni psicológico profesional.</p>
+  </section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-foot full">
+  <div class="shell foot-inner">
+    <p class="foot-name">Patrick · Diario de un exfumador</p>
+    <nav class="foot-links" aria-label="Enlaces">
+      <a href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.2 1.6 3.9 3.8 4.2v2.6c-1.4.1-2.7-.3-3.9-1v5.9c0 3.4-2.4 5.8-5.6 5.8-3 0-5.3-2.2-5.3-5.1 0-3.2 2.6-5.3 6-5v2.7c-.5-.1-1-.2-1.4-.2-1.4 0-2.4 1-2.4 2.4 0 1.5 1.1 2.4 2.5 2.4 1.5 0 2.6-1.1 2.6-3V3h3.7Z" /></svg>
+        Mi TikTok
+      </a>
+      <a href="#">Aviso legal</a>
+      <a href="mailto:toomanyseo@gmail.com">Contacto</a>
+    </nav>
+    <p class="foot-fine">© <span id="year">2026</span> Patrick. Hecho con honestidad, un día detrás de otro.</p>
+  </div>
+</footer>
+
+<div class="tail"></div>
+
+<!-- ==================== interactions ==================== -->
+<script src="image-slot.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
