@@ -124,21 +124,23 @@ img { display: block; max-width: 100%; }
   font-weight: 500;
   font-size: clamp(2.05rem, 8.4vw, 3.5rem);
   line-height: 1.08;
-  letter-spacing: -.012em;
-  margin: 0 0 .7rem;
-  text-wrap: balance;
+  letter-spacing: 0;
+  color: var(--ink);
+  margin: 0 auto clamp(1.2rem, 4vw, 1.7rem);
+  max-width: 11.5em;
+  text-align: center;
 }
 
-.hero-sub {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.18rem, 4.6vw, 1.5rem);
-  line-height: 1.4;
-  color: var(--accent-deep);
-  margin: 0 auto 1.6rem;
-  max-width: 30ch;
-  text-wrap: balance;
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-strong {
+  font-weight: 800;
+}
+
+.hero-title-accent {
+  color: #a44e32;
 }
 
 .hero-lede {
