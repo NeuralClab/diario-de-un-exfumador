@@ -27,6 +27,12 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).trim());
   }
 
+  function getSelectedPhaseText() {
+    if (!phase || phase.selectedIndex < 0) return "";
+    var option = phase.options[phase.selectedIndex];
+    return option && option.value ? option.textContent.trim() : "";
+  }
+
   /* ---- focus the hero email from anywhere ---- */
   function goToEmail() {
     if (!capture) return;
@@ -132,7 +138,7 @@
       var payload = {
         name: nameVal,
         email: val.trim(),
-        phase: phase ? phase.value : "",
+        phase: getSelectedPhaseText(),
         consent: true,
         consentText: CONSENT_TEXT,
         consentAt: new Date().toISOString(),
