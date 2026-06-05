@@ -7,11 +7,19 @@
 (function () {
   "use strict";
 
+  var SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwGC-Lk0ISyc61SGVqnAUiQ6GKyPBIZVQxBFwkbyTALdvqp72FfqoNmplpmiJSHjpt5/exec";
+  var CONSENT_TEXT = "Acepto recibir emails de Diario de un exfumador y entiendo que mis datos se usarán para enviarme contenido relacionado con este proceso.";
+
   var capture = document.getElementById("capture");
   var form = document.getElementById("signup-form");
   var input = document.getElementById("email");
   var phase = document.getElementById("phase");
+  var consent = document.getElementById("consent");
+  var consentWrap = document.querySelector(".consent-check");
   var errEl = document.getElementById("email-error");
+  var consentErrEl = document.getElementById("consent-error");
+  var submitErrEl = document.getElementById("submit-error");
+  var submitBtn = form ? form.querySelector(".btn-primary") : null;
 
   function isValidEmail(v) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).trim());
@@ -66,11 +74,22 @@
     });
   }
 
+  if (consent) {
+    consent.addEventListener("change", function () {
+      if (consent.checked) {
+        if (consentWrap) consentWrap.classList.remove("has-error");
+        if (consentErrEl) consentErrEl.classList.remove("show");
+      }
+    });
+  }
+
   /* ---- submit ---- */
   if (form) {
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
       var val = input.value;
+      if (submitErrEl) submitErrEl.classList.remove("show");
+
       if (!isValidEmail(val)) {
         input.classList.add("has-error");
         errEl.classList.add("show");
@@ -80,10 +99,53 @@
       input.classList.remove("has-error");
       errEl.classList.remove("show");
 
-      // Simulated submit. Replace with your provider (Mailchimp/Substack/etc.)
-      // by POSTing `val` + `phase.value` to your endpoint here.
-      var payload = { email: val.trim(), phase: phase ? phase.value : "" };
-      try { localStorage.setItem("diario_signup", JSON.stringify(payload)); } catch (err) {}
+      if (!consent || !consent.checked) {
+        if (consentWrap) consentWrap.classList.add("has-error");
+        if (consentErrEl) consentErrEl.classList.add("show");
+        try { consent.focus({ preventScroll: true }); } catch (err) { consent.focus(); }
+        return;
+      }
+
+      var payload = {
+        email: val.trim(),
+        phase: phase ? phase.value : "",
+        consent: true,
+        consentText: CONSENT_TEXT,
+        consentAt: new Date().toISOString(),
+        pageUrl: window.location.href,
+        userAgent: navigator.userAgent
+      };
+
+      if (!SHEETS_WEB_APP_URL) {
+        try { localStorage.setItem("diario_signup_pending", JSON.stringify(payload)); } catch (err) {}
+        if (submitErrEl) {
+          submitErrEl.textContent = "El formulario está preparado, pero falta conectar la URL de Google Sheets.";
+          submitErrEl.classList.add("show");
+        }
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Guardando...";
+      }
+
+      try {
+        await fetch(SHEETS_WEB_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        try { localStorage.setItem("diario_signup", JSON.stringify(payload)); } catch (err) {}
+      } catch (err) {
+        if (submitErrEl) submitErrEl.classList.add("show");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Quiero que me acompañes";
+        }
+        return;
+      }
 
       capture.classList.add("is-done");
       var note = document.getElementById("capture-note");

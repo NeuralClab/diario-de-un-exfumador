@@ -52,8 +52,19 @@
             <option value="finalizado">Finalicé el tratamiento, me inquieta qué ocurrirá ahora</option>
           </select>
 
+          <label class="consent-check" for="consent">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              required />
+            <span>Acepto recibir emails de Diario de un exfumador y entiendo que mis datos se usarán para enviarme contenido relacionado con este proceso.</span>
+          </label>
+
           <button class="btn-primary" type="submit">Quiero que me acompañes</button>
           <p class="error-text" id="email-error">Escribe un email válido para que pueda avisarte.</p>
+          <p class="error-text" id="consent-error">Debes aceptar el consentimiento para poder apuntarte.</p>
+          <p class="error-text" id="submit-error">No he podido guardar tus datos. Inténtalo de nuevo en unos segundos.</p>
         </form>
         <p class="capture-note" id="capture-note">Tu email solo lo uso para avisarte de mi proceso. No se lo doy a nadie.</p>
 

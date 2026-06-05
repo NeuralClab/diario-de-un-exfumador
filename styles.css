@@ -232,6 +232,27 @@ img { display: block; max-width: 100%; }
 .phase-select.is-set { color: var(--ink); font-weight: 600; }
 .phase-select:invalid { color: var(--ink-faint); }
 
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  text-align: left;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  margin: .15rem 0 .25rem;
+}
+.consent-check input {
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .12rem;
+  accent-color: var(--accent);
+}
+.consent-check.has-error span {
+  color: #b6442b;
+}
+
 .btn-primary {
   font-family: var(--sans);
   font-size: 1.08rem;
@@ -250,6 +271,11 @@ img { display: block; max-width: 100%; }
 .btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
 .btn-primary:active { transform: translateY(0); }
 .btn-primary:focus-visible { outline: 3px solid var(--accent-tint); outline-offset: 2px; }
+.btn-primary[disabled] {
+  cursor: wait;
+  opacity: .72;
+  transform: none;
+}
 
 .capture-note {
   margin: .9rem 0 0;
