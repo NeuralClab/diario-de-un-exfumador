@@ -12,10 +12,12 @@
 
   var capture = document.getElementById("capture");
   var form = document.getElementById("signup-form");
+  var nameInput = document.getElementById("name");
   var input = document.getElementById("email");
   var phase = document.getElementById("phase");
   var consent = document.getElementById("consent");
   var consentWrap = document.querySelector(".consent-check");
+  var nameErrEl = document.getElementById("name-error");
   var errEl = document.getElementById("email-error");
   var consentErrEl = document.getElementById("consent-error");
   var submitErrEl = document.getElementById("submit-error");
@@ -65,6 +67,15 @@
   }
 
   /* ---- live error clearing ---- */
+  if (nameInput) {
+    nameInput.addEventListener("input", function () {
+      if (nameInput.classList.contains("has-error") && nameInput.value.trim().length > 1) {
+        nameInput.classList.remove("has-error");
+        if (nameErrEl) nameErrEl.classList.remove("show");
+      }
+    });
+  }
+
   if (input) {
     input.addEventListener("input", function () {
       if (input.classList.contains("has-error") && isValidEmail(input.value)) {
@@ -87,8 +98,20 @@
   if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+      var nameVal = nameInput ? nameInput.value.trim() : "";
       var val = input.value;
       if (submitErrEl) submitErrEl.classList.remove("show");
+
+      if (nameInput && nameVal.length < 2) {
+        nameInput.classList.add("has-error");
+        if (nameErrEl) nameErrEl.classList.add("show");
+        try { nameInput.focus({ preventScroll: true }); } catch (err) { nameInput.focus(); }
+        return;
+      }
+      if (nameInput) {
+        nameInput.classList.remove("has-error");
+        if (nameErrEl) nameErrEl.classList.remove("show");
+      }
 
       if (!isValidEmail(val)) {
         input.classList.add("has-error");
@@ -107,6 +130,7 @@
       }
 
       var payload = {
+        name: nameVal,
         email: val.trim(),
         phase: phase ? phase.value : "",
         consent: true,

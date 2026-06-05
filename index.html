@@ -30,6 +30,17 @@
       <!-- ===== email capture (the only form on the page) ===== -->
       <section class="capture" id="capture" aria-label="Apúntate por email">
         <form class="capture-form" id="signup-form" novalidate>
+          <label class="field-label" for="name">Tu nombre:</label>
+          <input
+            class="email-input"
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="given-name"
+            placeholder="Tu nombre"
+            aria-describedby="name-error"
+            required />
+
           <label class="field-label" for="email">Déjame tu email y te acompaño:</label>
           <input
             class="email-input"
@@ -62,6 +73,7 @@
           </label>
 
           <button class="btn-primary" type="submit">Quiero que me acompañes</button>
+          <p class="error-text" id="name-error">Escribe tu nombre para saber cómo dirigirme a ti.</p>
           <p class="error-text" id="email-error">Escribe un email válido para que pueda avisarte.</p>
           <p class="error-text" id="consent-error">Debes aceptar el consentimiento para poder apuntarte.</p>
           <p class="error-text" id="submit-error">No he podido guardar tus datos. Inténtalo de nuevo en unos segundos.</p>
