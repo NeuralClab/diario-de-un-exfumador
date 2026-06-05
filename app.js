@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwGC-Lk0ISyc61SGVqnAUiQ6GKyPBIZVQxBFwkbyTALdvqp72FfqoNmplpmiJSHjpt5/exec";
+  var SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwlmG1MKmYnCad6uHXhuVkW1I-ycOtrmTOCKZml6xAW-IoHC8JcbXqf885eiB9AbIwZOw/exec";
   var CONSENT_TEXT = "Acepto recibir emails de Diario de un exfumador y entiendo que mis datos se usarán para enviarme contenido relacionado con este proceso.";
 
   var capture = document.getElementById("capture");
