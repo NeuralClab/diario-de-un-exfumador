@@ -121,22 +121,18 @@ img { display: block; max-width: 100%; }
 
 .hero-title {
   font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(2.05rem, 8.4vw, 3.5rem);
+  font-weight: 800;
+  font-size: clamp(1.78rem, 7.45vw, 3.25rem);
   line-height: 1.08;
   letter-spacing: 0;
   color: var(--ink);
   margin: 0 auto clamp(1.2rem, 4vw, 1.7rem);
-  max-width: 11.5em;
+  max-width: 12.8em;
   text-align: center;
 }
 
 .hero-title-line {
   display: block;
-}
-
-.hero-title-strong {
-  font-weight: 800;
 }
 
 .hero-title-accent {
