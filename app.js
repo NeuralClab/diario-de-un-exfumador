@@ -27,6 +27,39 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v).trim());
   }
 
+  function getTrafficParams() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+      page_location: window.location.href
+    };
+  }
+
+  function trackEvent(name, params) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", name, Object.assign(getTrafficParams(), params || {}));
+  }
+
+  function getCtaParams(el, extra) {
+    return Object.assign({
+      cta_id: el && el.id ? el.id : "",
+      cta_text: el ? el.textContent.trim().replace(/\s+/g, " ") : "",
+      cta_href: el && el.href ? el.href : ""
+    }, extra || {});
+  }
+
+  function bindClickTracking(id, events, extra) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener("click", function () {
+      for (var i = 0; i < events.length; i++) {
+        trackEvent(events[i], getCtaParams(el, typeof extra === "function" ? extra(el) : extra));
+      }
+    });
+  }
+
   function getSelectedPhaseText() {
     if (!phase || phase.selectedIndex < 0) return "";
     var option = phase.options[phase.selectedIndex];
@@ -63,6 +96,34 @@
       goToEmail();
     });
   }
+
+  bindClickTracking("cta-lead-magnet-form", ["click_lead_magnet", "click_cta_principal"], function () {
+    return { cta_type: "form_submit_button", phase: getSelectedPhaseText() };
+  });
+  bindClickTracking("cta-lead-magnet-valorando", ["click_lead_magnet", "click_cta_principal"], {
+    cta_type: "lead_magnet_card",
+    phase: "Estoy valorando dejar de fumar"
+  });
+  bindClickTracking("cta-guia-tratamiento", ["click_guia_gratis", "click_cta_principal"], {
+    cta_type: "free_guide_card",
+    phase: "Tengo el tratamiento, pero no me atrevo a empezar"
+  });
+  bindClickTracking("cta-guia-recaida", ["click_guia_gratis", "click_cta_principal"], {
+    cta_type: "free_guide_card",
+    phase: "Finalice el tratamiento, me inquieta que ocurrira ahora"
+  });
+  bindClickTracking("cta-telegram-community", ["click_telegram", "click_cta_principal"], {
+    cta_type: "telegram",
+    destination: "telegram"
+  });
+  bindClickTracking("cta-tiktok-live", ["click_cta_principal"], {
+    cta_type: "tiktok",
+    destination: "tiktok"
+  });
+  bindClickTracking("cta-tiktok-footer", ["click_cta_principal"], {
+    cta_type: "tiktok_footer",
+    destination: "tiktok"
+  });
 
   /* keep the select's "set" styling in sync */
   if (phase) {
@@ -168,6 +229,11 @@
           body: JSON.stringify(payload)
         });
         try { localStorage.setItem("diario_signup", JSON.stringify(payload)); } catch (err) {}
+        trackEvent("submit_formulario_bienvenida", {
+          form_id: "signup-form",
+          phase: payload.phase,
+          consent: payload.consent
+        });
       } catch (err) {
         if (submitErrEl) submitErrEl.classList.add("show");
         if (submitBtn) {
