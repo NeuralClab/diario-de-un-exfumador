@@ -9,14 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,800;1,6..72,400;1,6..72,500&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<!-- Google Analytics 4: sustituye G-XXXXXXXXXX por tu ID real de medicion GA4. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
 </head>
 <body>
 
@@ -80,7 +72,7 @@
             <span>Acepto recibir emails de Diario de un exfumador y entiendo que mis datos se usarán para enviarme contenido relacionado con este proceso.</span>
           </label>
 
-          <button class="btn-primary" id="cta-lead-magnet-form" type="submit">Quiero que me acompañes</button>
+          <button class="btn-primary" type="submit">Quiero que me acompañes</button>
           <p class="error-text" id="name-error">Escribe tu nombre para saber cómo dirigirme a ti.</p>
           <p class="error-text" id="email-error">Escribe un email válido para que pueda avisarte.</p>
           <p class="error-text" id="consent-error">Debes aceptar el consentimiento para poder apuntarte.</p>
@@ -135,7 +127,7 @@
           </div>
         </div>
         <p class="card-text">Aún no te has decidido y ni siquiera has ido al médico. Empieza por aquí: un recurso gratuito para entender qué te espera y dar el primer paso sin agobios.</p>
-        <button class="card-cta" id="cta-lead-magnet-valorando" data-scroll-to-email data-phase="valorando" type="button">
+        <button class="card-cta" data-scroll-to-email data-phase="valorando" type="button">
           Quiero dejar de fumar
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </button>
@@ -152,7 +144,7 @@
           </div>
         </div>
         <p class="card-text">Tienes la medicación en casa y arrancas el proceso. Una guía para acompañar tus primeros días y no perderte por el camino.</p>
-        <button class="card-cta" id="cta-guia-tratamiento" data-scroll-to-email data-phase="no-atrevo" type="button">
+        <button class="card-cta" data-scroll-to-email data-phase="no-atrevo" type="button">
           Ver la guía
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </button>
@@ -169,7 +161,7 @@
           </div>
         </div>
         <p class="card-text">Acabaste el tratamiento y tienes miedo de volver atrás. Una guía de mantenimiento para que esos días bajos no te pillen desprevenido.</p>
-        <button class="card-cta" id="cta-guia-recaida" data-scroll-to-email data-phase="finalizado" type="button">
+        <button class="card-cta" data-scroll-to-email data-phase="finalizado" type="button">
           Ver la guía
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </button>
@@ -192,7 +184,7 @@
         </div>
         <h2 class="community-title" style="font-size: 32px; text-align: center">Te acompaño en el día a día</h2>
         <p class="community-text">Entra en la comunidad de Telegram y caminemos cada día juntos.</p>
-        <a class="btn-telegram" id="cta-telegram-community" href="https://t.me/diariodeunexfumador" target="_blank" rel="noopener">
+        <a class="btn-telegram" href="https://t.me/diariodeunexfumador" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.4 18.7 19.5c-.24 1.06-.87 1.32-1.76.82l-4.86-3.58-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.94L17.94 6.5c.4-.35-.09-.55-.62-.2L6.1 13.4l-4.78-1.5c-1.04-.32-1.06-1.04.22-1.54L20.5 2.86c.87-.32 1.63.2 1.4 1.54Z"/></svg>
           Quiero unirme
         </a>
@@ -238,7 +230,7 @@
       </div>
       <h3 class="live-title">Próximo directo en TikTok</h3>
       <p class="live-text">Sígueme en TikTok y no te pierdas el próximo directo, un espacio de fumadores y exfumadores donde nos apoyamos unos a otros y donde también respondo preguntas e informo de las etapas de exfumador. ¡No te lo pierdas!</p>
-      <a class="live-cta" id="cta-tiktok-live" href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
+      <a class="live-cta" href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
         Seguir en TikTok
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
       </a>
@@ -256,7 +248,7 @@
   <div class="shell foot-inner">
     <p class="foot-name">Patrick · Diario de un exfumador</p>
     <nav class="foot-links" aria-label="Enlaces">
-      <a id="cta-tiktok-footer" href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
+      <a href="https://www.tiktok.com/@patrickanatta" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.2 1.6 3.9 3.8 4.2v2.6c-1.4.1-2.7-.3-3.9-1v5.9c0 3.4-2.4 5.8-5.6 5.8-3 0-5.3-2.2-5.3-5.1 0-3.2 2.6-5.3 6-5v2.7c-.5-.1-1-.2-1.4-.2-1.4 0-2.4 1-2.4 2.4 0 1.5 1.1 2.4 2.5 2.4 1.5 0 2.6-1.1 2.6-3V3h3.7Z" /></svg>
         Mi TikTok
       </a>
@@ -271,7 +263,7 @@
 
 <!-- ==================== interactions ==================== -->
 <script src="image-slot.js"></script>
-<script src="app.js?v=20260607-analytics-v1"></script>
+<script src="app.js?v=20260605-forms-v3"></script>
 
 </body>
 </html>
